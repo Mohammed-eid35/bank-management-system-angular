@@ -1,0 +1,13 @@
+<div *ngIf="userAccounts">
+    <ul>
+        <li *ngFor="let account of userAccounts">
+            <p>{{ account.card_number }}</p>
+            <p>{{ account.cvv }}</p>
+            <p>{{ account.balance }}</p>
+        </li>
+    </ul>
+</div>
+
+<button *ngIf="userAccounts.length < 3" (click)="createNewAccountOnClick()">
+    Create New Account
+</button>
