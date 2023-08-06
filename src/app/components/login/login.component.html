@@ -3,7 +3,7 @@
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form-icon">
         <span>
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+          <img src="../../../assets/account-icon-png-2.jpg" alt="avatar-icon">
         </span>
       </div>
       <div class="form-group">
@@ -24,8 +24,20 @@
       <div *ngIf="errorMessage" class="alert alert-danger">
         {{ errorMessage }}
       </div>
-      <div class="form-group">
-        <input type="submit" class="btn btn-block create-account" value="Login" />
+      <div class="form-group login-btn">
+        <div class="row">
+          <div class="col-3">
+            <input type="submit" class="btn btn-block create-account" value="Login" />
+          </div>
+          <div class="col">
+            <span class="d-inline-block" style="margin-top: 2em;">
+              you do not have an account?
+              <a routerLink="/register">
+                Register
+              </a>
+            </span>
+          </div>
+        </div>
       </div>
     </form>
   </div>

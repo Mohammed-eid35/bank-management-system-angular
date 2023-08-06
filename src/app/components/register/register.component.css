@@ -1,7 +1,6 @@
 .form-container {
     width: 100%;
     height: 100%;
-    background-color: #dee9ff;
 }
 
 .registration-form {
@@ -19,7 +18,7 @@
 
 .registration-form .form-icon {
 	text-align: center;
-    background-color: #5891ff;
+    background-color: #f5f9ee;
     border-radius: 50%;
     font-size: 40px;
     color: white;
@@ -28,6 +27,12 @@
     margin: auto;
     margin-bottom: 50px;
     line-height: 100px;
+    overflow: hidden;
+}
+
+.registration-form .form-icon img {
+    width: 100%;
+    height: 100%;
 }
 
 .registration-form .item {
