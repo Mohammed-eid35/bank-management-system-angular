@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserProfileModel } from 'src/app/models/profile/userProfile.model';
 import { ResponseModel } from 'src/app/models/response.model';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { ProfileService } from 'src/app/services/profile/profile.service';
 
 @Component({
@@ -10,7 +11,10 @@ import { ProfileService } from 'src/app/services/profile/profile.service';
 })
 export class ProfileComponent implements OnInit {
   
-  constructor(private profileService: ProfileService) { }
+  constructor(
+    private profileService: ProfileService,
+    private authService: AuthenticationService
+  ) { }
     
     ngOnInit(): void {
       this.fetchUserProfile();
@@ -29,5 +33,9 @@ export class ProfileComponent implements OnInit {
         console.error('Failed to fetch user profile:', error);
       }
     });
+  }
+
+  onLogoutClick() : void {
+    this.authService.logout();
   }
 }
